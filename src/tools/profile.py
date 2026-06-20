@@ -55,7 +55,7 @@ def extract_profile_updates(message: str) -> dict[str, Any]:
     text = message.lower()
     updates: dict[str, Any] = {}
 
-    age_match = re.search(r"\b(\d{1,3})\s*(?:years old|year-old|yo)\b", text)
+    age_match = re.search(r"\b(\d{1,3})[\s-]*(?:years old|year old|year-old|yo)\b", text)
     if age_match:
         updates["age"] = int(age_match.group(1))
 

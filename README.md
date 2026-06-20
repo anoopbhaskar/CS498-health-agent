@@ -30,7 +30,7 @@ Open <http://localhost:8000> for the web UI.
 ## Run tests
 
 ```bash
-pytest
+python3 -m pytest
 ```
 
 ## REST endpoints

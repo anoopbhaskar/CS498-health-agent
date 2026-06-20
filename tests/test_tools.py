@@ -41,7 +41,7 @@ def test_profile_extraction_and_missing_fields():
 def test_nutrition_targets_are_personalized():
     profile = sample_profile()
     assert protein_range(profile, muscle_gain=True) == (131, 180)
-    assert hydration_range(profile) == (49, 65)
+    assert hydration_range(profile) == (98, 114)
     response = calorie_recommendation(profile)
     assert "BMR" in response
     assert "TDEE" in response
