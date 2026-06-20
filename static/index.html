@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FitAgent</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <p class="eyebrow">Safety-aware health and fitness coach</p>
+        <h1>FitAgent</h1>
+      </div>
+      <button id="reset-session" type="button">Reset session</button>
+    </header>
+
+    <main>
+      <section class="card profile-card">
+        <h2>Biometric profile</h2>
+        <form id="profile-form">
+          <div class="grid">
+            <label>Age <input name="age" type="number" min="0" max="120" /></label>
+            <label>Sex <input name="sex" placeholder="female, male, etc." /></label>
+            <label>Height (cm) <input name="height_cm" type="number" step="0.1" /></label>
+            <label>Weight (kg) <input name="weight_kg" type="number" step="0.1" /></label>
+            <label>Activity level <input name="activity_level" placeholder="lightly active" /></label>
+            <label>Fitness level <input name="fitness_level" placeholder="beginner" /></label>
+            <label>Current steps/day <input name="current_steps" type="number" min="0" /></label>
+          </div>
+          <label>Health conditions <input name="health_conditions" placeholder="hypertension, knee pain" /></label>
+          <label>Dietary restrictions <input name="dietary_restrictions" placeholder="shellfish allergy, vegetarian" /></label>
+          <label>Fitness goals <input name="fitness_goals" placeholder="weight loss, build muscle" /></label>
+          <button type="submit">Save profile</button>
+        </form>
+        <pre id="profile-status">No profile saved yet.</pre>
+      </section>
+
+      <section class="card chat-card">
+        <h2>Coach chat</h2>
+        <div id="chat-log" class="chat-log"></div>
+        <form id="chat-form" class="chat-form">
+          <input id="chat-input" placeholder="Ask for a meal plan, workout, safety substitution, or progress check..." />
+          <button type="submit">Send</button>
+        </form>
+      </section>
+
+      <section class="card progress-card">
+        <div class="section-heading">
+          <h2>Progress dashboard</h2>
+          <button id="refresh-progress" type="button">Refresh</button>
+        </div>
+        <div id="progress-view">Submit a profile to start tracking progress.</div>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
